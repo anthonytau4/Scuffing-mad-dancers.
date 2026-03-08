@@ -58,3 +58,34 @@ document.getElementById('copy-bank').addEventListener('click', async () => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
+const partnerToggle = document.getElementById('partner-toggle');
+const partnerDropdown = document.getElementById('partner-dropdown');
+
+if (partnerToggle && partnerDropdown) {
+  partnerToggle.addEventListener('click', () => {
+    const isOpen = !partnerDropdown.hasAttribute('hidden');
+    if (isOpen) {
+      partnerDropdown.setAttribute('hidden', '');
+      partnerToggle.setAttribute('aria-expanded', 'false');
+    } else {
+      partnerDropdown.removeAttribute('hidden');
+      partnerToggle.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.partner-menu')) {
+      partnerDropdown.setAttribute('hidden', '');
+      partnerToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      partnerDropdown.setAttribute('hidden', '');
+      partnerToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
