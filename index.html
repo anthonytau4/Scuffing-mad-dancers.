@@ -7,15 +7,18 @@
   <meta name="description" content="Scuffing Mad Dancers line dancing every Friday and Sunday at Ohau Hall.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="hero-bg"></div>
     <div class="overlay"></div>
     <nav class="nav container">
-      <a href="#top" class="brand">SMD</a>
+      <a href="#top" class="brand">
+        <img src="logo.png" alt="Scuffing Mad Dancers logo">
+        <span>SMD</span>
+      </a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#pricing">Pricing</a>
@@ -24,92 +27,112 @@
       </div>
     </nav>
 
-    <div class="hero-content container" id="top">
-      <img class="hero-logo" src="https://customer-assets.emergentagent.com/job_ohau-hall-dance/artifacts/2j37recv_SMD%20Scuffing%20Mad%20Dancers%20logo.png" alt="Scuffing Mad Dancers logo">
-      <p class="eyebrow">LINE DANCING EVERY FRIDAY & SUNDAY</p>
-      <h1>Get Ready to <span>Scuff</span></h1>
-      <div class="hero-meta">
-        <div>🕕 6:00 PM - 9:30 PM</div>
-        <div>📍 Ohau Hall</div>
+    <div class="hero-content container">
+      <div class="hero-copy">
+        <p class="eyebrow">FRIDAY &amp; SUNDAY NIGHTS · OHAU HALL</p>
+        <h1>Line dancing with a proper bit of <span>spark</span>.</h1>
+        <p class="hero-lead">Friendly classes, great music, and a welcoming floor for beginners, improvers, and confident dancers alike. Come for the steps, stay for the atmosphere.</p>
+        <div class="hero-meta">
+          <div class="meta-pill">6:00 PM – 9:30 PM</div>
+          <div class="meta-pill">Ohau Hall</div>
+          <div class="meta-pill">All levels welcome</div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pricing">See Pricing</a>
+          <a class="btn btn-secondary" href="#contact">Book a Spot</a>
+        </div>
       </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#pricing">View Pricing</a>
-        <a class="btn btn-secondary" href="#contact">Get In Touch</a>
+      <div class="hero-card shell-card">
+        <img class="hero-logo" src="logo.png" alt="Scuffing Mad Dancers logo">
+        <div class="mini-stats">
+          <div>
+            <strong>2 Nights</strong>
+            <span>Friday &amp; Sunday</span>
+          </div>
+          <div>
+            <strong>3.5 Hours</strong>
+            <span>Of dancing each session</span>
+          </div>
+          <div>
+            <strong>All Welcome</strong>
+            <span>From first-timers upward</span>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section section-dark" id="about">
+    <section class="section" id="about">
       <div class="container two-col">
-        <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1657054711964-a0eb014c2df1?w=1000&q=80" alt="People dancing together">
-        </div>
         <div>
-          <p class="eyebrow">ABOUT US</p>
-          <h2>Join the <span>Movement</span></h2>
-          <p class="lead">Scuffing Mad Dancers brings the joy of line dancing to Ohau Hall every Friday and Sunday evening. Whether you are taking your first steps or already know your way around the floor, there is a place for you here.</p>
+          <p class="eyebrow">ABOUT SCUFFING MAD DANCERS</p>
+          <h2>A lively, local night out with <span>proper heart</span>.</h2>
+          <p class="lead">Scuffing Mad Dancers brings people together for upbeat line dancing in a warm, welcoming space. Whether you are stepping onto the floor for the first time or polishing what you already know, there is room for you here.</p>
           <div class="feature-grid">
-            <article class="feature"><h3>All Levels</h3><p>Beginners welcome.</p></article>
-            <article class="feature"><h3>Great Music</h3><p>Country and more.</p></article>
-            <article class="feature"><h3>Fun Vibes</h3><p>Friendly atmosphere.</p></article>
-            <article class="feature"><h3>Expert Tuition</h3><p>Learn with confidence.</p></article>
+            <article class="feature shell-card"><h3>Beginner Friendly</h3><p>Clear teaching, steady progress, and no pressure.</p></article>
+            <article class="feature shell-card"><h3>Good Music</h3><p>A lively mix that keeps the room moving all night.</p></article>
+            <article class="feature shell-card"><h3>Community Feel</h3><p>Supportive people, easy smiles, and plenty of fun.</p></article>
+            <article class="feature shell-card"><h3>Room To Improve</h3><p>Build confidence and take on more as you go.</p></article>
           </div>
+        </div>
+        <div class="image-panel shell-card">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80" alt="Crowd dancing at an event">
         </div>
       </div>
     </section>
 
-    <section class="section" id="pricing">
+    <section class="section section-dark" id="pricing">
       <div class="container">
         <div class="section-heading center">
           <p class="eyebrow">PRICING</p>
-          <h2>Choose Your <span>Experience</span></h2>
-          <p class="subtle">This site is now fully frontend-only. Booking works through email, phone, and bank transfer details.</p>
+          <h2>Choose the class that suits your <span>stride</span>.</h2>
+          <p class="subtle">Simple pricing, friendly sessions, and easy booking by email, phone, or payment on the night.</p>
         </div>
         <div class="pricing-grid">
-          <article class="price-card">
+          <article class="price-card shell-card">
             <h3>Beginners</h3>
-            <p class="price-desc">Perfect for newcomers</p>
+            <p class="price-desc">A gentle start for new dancers</p>
             <div class="price">$6<span>/session</span></div>
             <ul>
-              <li>Introduction to basic steps</li>
-              <li>Learn fundamental rhythms</li>
-              <li>Fun and friendly environment</li>
+              <li>Basic steps and rhythm</li>
+              <li>Supportive pace for starters</li>
+              <li>Relaxed and welcoming atmosphere</li>
               <li>No experience needed</li>
             </ul>
             <button class="btn btn-secondary book-btn" data-package="Beginners" data-price="6.00">Book / Enquire</button>
           </article>
 
-          <article class="price-card featured">
-            <div class="badge">Best Value</div>
+          <article class="price-card featured shell-card">
+            <div class="badge">Most Popular</div>
             <h3>Beginner &amp; Improver</h3>
-            <p class="price-desc">Most popular</p>
+            <p class="price-desc">Ideal for building confidence</p>
             <div class="price">$8<span>/session</span></div>
             <ul>
-              <li>All beginner classes included</li>
-              <li>Intermediate step patterns</li>
-              <li>Extended session time</li>
-              <li>Progress at your pace</li>
+              <li>Beginner class included</li>
+              <li>Extra patterns and combinations</li>
+              <li>Longer time on the floor</li>
+              <li>Progress at a comfortable pace</li>
             </ul>
             <button class="btn btn-primary book-btn" data-package="Beginner &amp; Improver" data-price="8.00">Book / Enquire</button>
           </article>
 
-          <article class="price-card">
+          <article class="price-card shell-card">
             <h3>Full Class</h3>
-            <p class="price-desc">Complete experience</p>
+            <p class="price-desc">The complete evening</p>
             <div class="price">$10<span>/session</span></div>
             <ul>
-              <li>Complete access all night</li>
-              <li>Advanced dance routines</li>
-              <li>Full 3.5 hour session</li>
-              <li>Community events access</li>
+              <li>Access to the full session</li>
+              <li>More routines and floor time</li>
+              <li>Best value for regular dancers</li>
+              <li>Great for a full night out</li>
             </ul>
             <button class="btn btn-secondary book-btn" data-package="Full Class" data-price="10.00">Book / Enquire</button>
           </article>
         </div>
 
-        <div class="bank-box">
-          <p>Prefer bank transfer?</p>
+        <div class="bank-box shell-card">
+          <p class="bank-kicker">Prefer bank transfer?</p>
           <strong>ANTHONY TAUTARI</strong>
           <code id="bank-number">01-0666-0308263-00</code>
           <button class="btn btn-secondary small" id="copy-bank">Copy bank details</button>
@@ -117,14 +140,14 @@
       </div>
     </section>
 
-    <section class="section section-dark" id="schedule">
+    <section class="section" id="schedule">
       <div class="container">
-        <div class="panel center">
+        <div class="panel center shell-card">
           <p class="eyebrow">WHEN &amp; WHERE</p>
           <h2>Every <span>Friday &amp; Sunday</span></h2>
           <div class="schedule-grid">
             <div><h3>Days</h3><p>Friday &amp; Sunday</p></div>
-            <div><h3>Time</h3><p>6:00 PM - 9:30 PM</p></div>
+            <div><h3>Time</h3><p>6:00 PM – 9:30 PM</p></div>
             <div><h3>Location</h3><p>Ohau Hall</p></div>
             <div><h3>Style</h3><p>Line Dancing</p></div>
           </div>
@@ -132,47 +155,44 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section section-dark" id="contact">
       <div class="container">
         <div class="section-heading center">
           <p class="eyebrow">GET IN TOUCH</p>
-          <h2>Ready to <span>Dance</span>?</h2>
+          <h2>Ready to <span>join in</span>?</h2>
+          <p class="subtle">Pick whichever suits you best and we’ll get you sorted.</p>
         </div>
         <div class="contact-grid">
-          <a class="contact-card" href="mailto:Anthonytau4@gmail.com">
-            <h3>Email Us</h3>
+          <a class="contact-card shell-card" href="mailto:Anthonytau4@gmail.com">
+            <h3>Email</h3>
             <p>Anthonytau4@gmail.com</p>
+            <span>Best for general enquiries and bookings</span>
           </a>
-          <a class="contact-card" href="tel:021404537">
-            <h3>Call Us</h3>
+          <a class="contact-card shell-card" href="tel:021404537">
+            <h3>Call</h3>
             <p>021 404 537</p>
+            <span>Handy for a quick answer</span>
           </a>
         </div>
-      </div>
-    </section>
-
-    <section class="promo-strip">
-      <div class="container promo-wrap">
-        <a class="promo-link" href="https://barkingmadbarbers.com" target="_blank" rel="noopener noreferrer">
-          <span>Have a dog? Check out our business site</span>
-          <img src="https://customer-assets.emergentagent.com/job_ohau-hall-dance/artifacts/w22zy3ba_ChatGPT%20Image%20Mar%203%2C%202026%2C%2012_57_00%20PM%281%29.png" alt="Barking Mad Barbers logo">
-        </a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-wrap">
-      <img src="https://customer-assets.emergentagent.com/job_ohau-hall-dance/artifacts/2j37recv_SMD%20Scuffing%20Mad%20Dancers%20logo.png" alt="Scuffing Mad Dancers logo">
-      <div>
-        <p>Every Friday & Sunday at Ohau Hall | 6:00 PM - 9:30 PM</p>
-        <small>© <span id="year"></span> Scuffing Mad Dancers. All rights reserved.</small>
+      <div class="footer-brand">
+        <img src="logo.png" alt="Scuffing Mad Dancers logo">
+        <div>
+          <strong>Scuffing Mad Dancers</strong>
+          <p>Friday &amp; Sunday · Ohau Hall · 6:00 PM – 9:30 PM</p>
+        </div>
       </div>
+      <small>© <span id="year"></span> Scuffing Mad Dancers. All rights reserved.</small>
     </div>
   </footer>
 
   <dialog id="booking-modal" class="modal">
-    <form method="dialog" class="modal-card">
+    <form method="dialog" class="modal-card shell-card">
       <button class="modal-close" id="close-modal" aria-label="Close">×</button>
       <p class="eyebrow">BOOKING</p>
       <h3 id="modal-title">Book your class</h3>
@@ -187,8 +207,8 @@
         <input type="email" id="customer-email" placeholder="your@email.com">
       </label>
 
-      <div class="bank-panel">
-        <p>Frontend-only booking options. Use direct contact or bank transfer.</p>
+      <div class="bank-panel shell-card">
+        <p>Use the buttons below to enquire or book your place. Payment can be made by bank transfer or on the night.</p>
         <strong>ANTHONY TAUTARI</strong>
         <code>01-0666-0308263-00</code>
       </div>

@@ -1,11 +1,11 @@
-# Scuffing Mad Dancers - Static Frontend
+# Scuffing Mad Dancers Website
 
-This version is pure frontend and works on GitHub Pages without any backend.
+A static website for Scuffing Mad Dancers that works nicely on GitHub Pages.
 
 ## What it uses
-- Plain HTML
-- Plain CSS
-- Plain JavaScript
+- HTML
+- CSS
+- JavaScript
 
 ## Features
 - Pricing cards
@@ -13,7 +13,7 @@ This version is pure frontend and works on GitHub Pages without any backend.
 - Email booking link
 - Phone link
 - Copyable bank details
-- Static hosting friendly
+- Simple GitHub Pages hosting
 
 ## Publish to GitHub Pages
 1. Create a new GitHub repository.
