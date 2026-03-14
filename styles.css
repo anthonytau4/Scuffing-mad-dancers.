@@ -668,3 +668,29 @@ input:focus {
     width: 100%;
   }
 }
+
+
+.venue-panel{
+  margin-top:18px;
+  padding:18px;
+  border:1px solid rgba(255,184,77,.28);
+  border-radius:20px;
+  background:rgba(10,10,10,.72);
+  box-shadow:0 10px 30px rgba(0,0,0,.28);
+}
+.venue-title{
+  font-size:1.05rem;
+  font-weight:800;
+  color:#fff;
+  margin-bottom:8px;
+}
+.venue-address{
+  color:rgba(255,255,255,.92);
+  line-height:1.6;
+  margin-bottom:12px;
+}
+.map-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
