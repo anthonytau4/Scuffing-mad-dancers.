@@ -338,7 +338,7 @@ h1 span, h2 span { color: var(--gold); }
 }
 .hero-photo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 12px;
   margin: 0 0 18px;
 }
@@ -399,7 +399,7 @@ h1 span, h2 span { color: var(--gold); }
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
 .price-card {
@@ -428,6 +428,8 @@ h1 span, h2 span { color: var(--gold); }
 .price span { font-size: 1rem; color: var(--muted-strong); margin-left: 8px; font-weight: 700; }
 .price-card ul { padding-left: 20px; margin: 0 0 24px; color: #ede6da; }
 .price-card li { margin: 0 0 10px; }
+.pricing-note { margin-top: 22px; }
+.pricing-note strong { color: var(--text); }
 .bank-box {
   margin-top: 30px;
   padding: 26px;
