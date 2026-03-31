@@ -45,7 +45,7 @@ document.querySelectorAll('.book-btn').forEach((btn) => {
 document.getElementById('close-modal').addEventListener('click', () => modal.close());
 
 document.getElementById('copy-bank').addEventListener('click', async () => {
-  const details = 'ANTHONY TAUTARI\n01-0666-0308263-00';
+  const details = 'PETER REYNOLDS\n02-0552-0027244-005';
   try {
     await navigator.clipboard.writeText(details);
     document.getElementById('copy-bank').textContent = 'Copied';
