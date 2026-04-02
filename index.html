@@ -7,11 +7,9 @@
   <meta name="description" content="Scuffing Mad Dancers runs friendly line dancing classes every Friday and Sunday at Tawa Scout Hall, 21 Oxford Street, Tawa, Wellington 5028. Beginners, improvers, and confident dancers all welcome.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-
-
-
 
 
   <link rel="canonical" href="https://scuffingmaddancers.nz/">
@@ -38,6 +36,13 @@
   <header class="hero" id="top">
     <div class="hero-bg"></div>
     <div class="overlay"></div>
+    <div class="floating-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
     <nav class="nav container">
       <a href="#top" class="brand">
         <img src="logo.png" alt="Scuffing Mad Dancers logo">
@@ -46,6 +51,7 @@
       <div class="nav-right">
         <div class="nav-links">
           <a href="#about">About</a>
+          <a href="#community">Community</a>
           <a href="#pricing">Pricing</a>
           <a href="#schedule">Schedule</a>
           <a href="#contact">Contact</a>
@@ -113,11 +119,15 @@
         </div>
       </div>
     </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
   </header>
 
   <section class="partner-spotlight-section">
     <div class="container">
-      <div class="partner-spotlight shell-card">
+      <div class="partner-spotlight shell-card" data-reveal="fade-up">
         <a class="partner-spotlight-ad" href="https://barkingmadbarbers.com" target="_blank" rel="noopener noreferrer">
           <img src="barber-logo.png" alt="Barking Mad Barbers logo">
           <div class="partner-spotlight-copy">
@@ -132,26 +142,50 @@
   </section>
 
   <main>
-    <section class="section" id="about">
+    <section class="section" id="about" data-reveal="fade-up">
       <div class="container two-col">
         <div>
           <p class="eyebrow">ABOUT SCUFFING MAD DANCERS</p>
           <h2>A lively, local night out with <span>proper heart</span>.</h2>
           <p class="lead">Scuffing Mad Dancers brings people together for upbeat line dancing in a warm, welcoming space at Tawa Scout Hall. Whether you are stepping onto the floor for the first time or polishing what you already know, there is room for you here.</p>
           <div class="feature-grid">
-            <article class="feature shell-card"><h3>Beginner Friendly</h3><p>Clear teaching, steady progress, and no pressure.</p></article>
-            <article class="feature shell-card"><h3>Good Music</h3><p>A lively mix that keeps the room moving all night.</p></article>
-            <article class="feature shell-card"><h3>Community Feel</h3><p>Supportive people, easy smiles, and plenty of fun.</p></article>
-            <article class="feature shell-card"><h3>Room To Improve</h3><p>Build confidence and take on more as you go.</p></article>
+            <article class="feature shell-card" data-reveal="fade-left"><i class="fas fa-seedling"></i><h3>Beginner Friendly</h3><p>Clear teaching, steady progress, and no pressure.</p></article>
+            <article class="feature shell-card" data-reveal="fade-right"><i class="fas fa-music"></i><h3>Good Music</h3><p>A lively mix that keeps the room moving all night.</p></article>
+            <article class="feature shell-card" data-reveal="fade-left"><i class="fas fa-heart"></i><h3>Community Feel</h3><p>Supportive people, easy smiles, and plenty of fun.</p></article>
+            <article class="feature shell-card" data-reveal="fade-right"><i class="fas fa-chart-line"></i><h3>Room To Improve</h3><p>Build confidence and take on more as you go.</p></article>
           </div>
         </div>
-        <div class="image-panel shell-card">
+        <div class="image-panel shell-card" data-reveal="zoom-in">
           <img src="1000036452.jpg" alt="Scuffing Mad Dancers class on the floor in Tawa">
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="pricing">
+    <section class="section section-dark" id="community">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="eyebrow">COMMUNITY</p>
+          <h2>What our <span>dancers</span> say.</h2>
+          <p class="subtle">Real people, real nights out, and a floor that always feels like home.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card shell-card" data-reveal="zoom-in">
+            <p>"I walked in knowing absolutely nothing and left buzzing. Everyone was so patient and encouraging — I've been coming back every week since!"</p>
+            <footer>— Sarah T.</footer>
+          </article>
+          <article class="testimonial-card shell-card" data-reveal="zoom-in">
+            <p>"Great music, great people, and a proper workout without even realising it. Friday nights haven't been the same since I found this crew."</p>
+            <footer>— Mike R.</footer>
+          </article>
+          <article class="testimonial-card shell-card" data-reveal="zoom-in">
+            <p>"We joined as a couple looking for something fun to do together. Now it's the highlight of our week — wouldn't miss it for the world."</p>
+            <footer>— Jenny &amp; Dave</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="pricing" data-reveal="fade-up">
       <div class="container">
         <div class="section-heading center">
           <p class="eyebrow">PRICING</p>
@@ -159,29 +193,29 @@
           <p class="subtle">Simple pricing, friendly sessions, and easy booking by email, phone, or payment on the night.</p>
         </div>
         <div class="pricing-grid">
-          <article class="price-card featured shell-card">
-            <div class="badge">Starter Option</div>
+          <article class="price-card featured shell-card" data-reveal="fade-left">
+            <div class="badge"><i class="fas fa-star"></i> Starter Option</div>
             <h3>Beginner &amp; Improver</h3>
             <p class="price-desc">New dancers join both classes together</p>
             <div class="price">$8<span>/session</span></div>
             <ul>
-              <li>Includes both beginner and improver</li>
-              <li>No beginner-only class option</li>
-              <li>Extra patterns and combinations</li>
-              <li>More time on the floor to build confidence</li>
+              <li><i class="fas fa-check"></i> Includes both beginner and improver</li>
+              <li><i class="fas fa-check"></i> No beginner-only class option</li>
+              <li><i class="fas fa-check"></i> Extra patterns and combinations</li>
+              <li><i class="fas fa-check"></i> More time on the floor to build confidence</li>
             </ul>
             <button class="btn btn-primary book-btn" data-package="Beginner &amp; Improver" data-price="8.00">Book / Enquire</button>
           </article>
 
-          <article class="price-card shell-card">
+          <article class="price-card shell-card" data-reveal="fade-right">
             <h3>Full Class</h3>
             <p class="price-desc">The complete evening</p>
             <div class="price">$10<span>/session</span></div>
             <ul>
-              <li>Access to the full session</li>
-              <li>More routines and floor time</li>
-              <li>Best value for regular dancers</li>
-              <li>Great for a full night out</li>
+              <li><i class="fas fa-check"></i> Access to the full session</li>
+              <li><i class="fas fa-check"></i> More routines and floor time</li>
+              <li><i class="fas fa-check"></i> Best value for regular dancers</li>
+              <li><i class="fas fa-check"></i> Great for a full night out</li>
             </ul>
             <button class="btn btn-secondary book-btn" data-package="Full Class" data-price="10.00">Book / Enquire</button>
           </article>
@@ -197,22 +231,22 @@
       </div>
     </section>
 
-    <section class="section" id="schedule">
+    <section class="section" id="schedule" data-reveal="fade-up">
       <div class="container">
         <div class="panel center shell-card">
           <p class="eyebrow">WHEN &amp; WHERE</p>
           <h2>Every <span>Friday &amp; Sunday</span></h2>
           <div class="schedule-grid">
-            <div><h3>Days</h3><p>Friday &amp; Sunday</p></div>
-            <div><h3>Time</h3><p>6:30 PM – 9 PM</p></div>
-            <div><h3>Location</h3><p>Tawa Scout Hall · 21 Oxford Street</p></div>
-            <div><h3>Style</h3><p>Line Dancing · All levels welcome</p></div>
+            <div><h3><i class="fas fa-calendar-alt"></i> Days</h3><p>Friday &amp; Sunday</p></div>
+            <div><h3><i class="fas fa-clock"></i> Time</h3><p>6:30 PM – 9 PM</p></div>
+            <div><h3><i class="fas fa-map-marker-alt"></i> Location</h3><p>Tawa Scout Hall · 21 Oxford Street</p></div>
+            <div><h3><i class="fas fa-shoe-prints"></i> Style</h3><p>Line Dancing · All levels welcome</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="contact">
+    <section class="section section-dark" id="contact" data-reveal="fade-up">
       <div class="container">
         <div class="section-heading center">
           <p class="eyebrow">GET IN TOUCH</p>
@@ -220,12 +254,14 @@
           <p class="subtle">Pick whichever suits you best and we’ll get you sorted.</p>
         </div>
         <div class="contact-grid">
-          <a class="contact-card shell-card" href="mailto:Anthonytau4@gmail.com">
+          <a class="contact-card shell-card" href="mailto:Anthonytau4@gmail.com" data-reveal="fade-left">
+            <i class="fas fa-envelope"></i>
             <h3>Email</h3>
             <p>Anthonytau4@gmail.com</p>
             <span>Best for general enquiries and bookings</span>
           </a>
-          <a class="contact-card shell-card" href="tel:021404537">
+          <a class="contact-card shell-card" href="tel:021404537" data-reveal="fade-right">
+            <i class="fas fa-phone"></i>
             <h3>Call</h3>
             <p>021 404 537</p>
             <span>Handy for a quick answer</span>
@@ -245,7 +281,12 @@
           <p>Friday &amp; Sunday · Tawa Scout Hall · 6:30 PM – 9 PM</p>
         </div>
       </div>
+      <div class="footer-social" aria-label="Social links">
+        <a href="mailto:Anthonytau4@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:021404537" aria-label="Phone"><i class="fas fa-phone"></i></a>
+      </div>
       <small>© <span id="year"></span> Scuffing Mad Dancers. All rights reserved.</small>
+      <a href="#top" class="back-to-top" aria-label="Return to top of page">Back to top <i class="fas fa-arrow-up"></i></a>
     </div>
   </footer>
 
