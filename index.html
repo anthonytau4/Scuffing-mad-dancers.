@@ -10,12 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-
-
-
-
   <link rel="canonical" href="https://scuffingmaddancers.nz/">
-
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -32,202 +27,308 @@
     "logo": "https://scuffingmaddancers.nz/android-chrome-512x512.png"
   }
   </script>
-
 </head>
 <body>
-  <header class="hero" id="top">
-    <div class="hero-bg"></div>
-    <div class="overlay"></div>
+
+  <!-- Navigation -->
+  <header class="site-header" id="top">
     <nav class="nav container">
       <a href="#top" class="brand">
-        <img src="logo.png" alt="Scuffing Mad Dancers logo">
+        <img src="logo.png" alt="Scuffing Mad Dancers logo" width="44" height="44">
         <span>SMD</span>
       </a>
-      <div class="nav-right">
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#schedule">Schedule</a>
-          <a href="#contact">Contact</a>
-        </div>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
         <div class="partner-menu">
           <button class="partner-toggle" id="partner-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="partner-dropdown">
-            More
-            <span aria-hidden="true">▾</span>
+            More <span aria-hidden="true">&#9662;</span>
           </button>
-          <div class="partner-dropdown shell-card" id="partner-dropdown" hidden>
+          <div class="partner-dropdown" id="partner-dropdown" hidden>
             <a class="partner-link" href="https://barkingmadbarbers.com" target="_blank" rel="noopener noreferrer">
-              <img src="barber-logo.png" alt="Barking Mad Barbers logo">
+              <img src="barber-logo.png" alt="Barking Mad Barbers logo" width="56" height="56">
               <div>
                 <strong>Barking Mad Barbers</strong>
-                <span>Open website</span>
+                <span>Visit website &rarr;</span>
               </div>
             </a>
           </div>
         </div>
       </div>
     </nav>
-
-    <div class="hero-content container">
-      <div class="hero-copy">
-        <p class="eyebrow">FRIDAY &amp; SUNDAY NIGHTS · TAWA SCOUT HALL</p>
-        <h1>Line dancing with a proper bit of <span>spark</span>.</h1>
-        <p class="hero-lead">Friendly classes, great music, and a welcoming floor for beginners, improvers, and confident dancers alike. Come for the steps, stay for the atmosphere in Tawa.</p>
-
-<div class="venue-panel">
-  <div class="venue-title">Now dancing at Tawa Scout Hall</div>
-  <div class="venue-address">21 Oxford Street, Tawa, Wellington 5028</div>
-  <a class="btn btn-secondary map-link" href="https://www.google.com/maps/search/?api=1&query=Tawa%20Scout%20Hall%2C%2021%20Oxford%20Street%2C%20Tawa%2C%20Wellington%205028" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-</div>
-
-        <div class="hero-meta">
-          <div class="meta-pill">6:30 PM – 9 PM</div>
-          <div class="meta-pill">Tawa</div>
-          <div class="meta-pill">All levels welcome</div>
-        </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#pricing">See Pricing</a>
-          <a class="btn btn-secondary" href="#contact">Book a Spot</a>
-        </div>
-      </div>
-      <div class="hero-card shell-card">
-        <img class="hero-logo" src="logo.png" alt="Scuffing Mad Dancers logo">
-        <div class="hero-photo-grid" aria-label="Scuffing Mad Dancers class photos">
-          <img src="1000036446.jpg" alt="Dancers moving across the floor at Tawa Scout Hall">
-          <img src="1000036448.jpg" alt="Scuffing Mad Dancers class mid-routine in Tawa">
-          <img src="1000036450.jpg" alt="Line dancers stepping together at Tawa Scout Hall">
-        </div>
-        <div class="mini-stats">
-          <div>
-            <strong>2 Nights</strong>
-            <span>Friday &amp; Sunday</span>
-          </div>
-          <div>
-            <strong>2.5 Hours</strong>
-            <span>Of dancing each session</span>
-          </div>
-          <div>
-            <strong>All Welcome</strong>
-            <span>From first-timers upward</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
   </header>
 
-  <section class="partner-spotlight-section">
-    <div class="container">
-      <div class="partner-spotlight shell-card">
-        <a class="partner-spotlight-ad" href="https://barkingmadbarbers.com" target="_blank" rel="noopener noreferrer">
-          <img src="barber-logo.png" alt="Barking Mad Barbers logo">
-          <div class="partner-spotlight-copy">
-            <p class="eyebrow">OUR FRIENDS</p>
-            <h2>Barking Mad Barbers</h2>
-            <p class="subtle">Tap the advert to visit Barking Mad Barbers, then come dance with us in Tawa.</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content container">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">FRIDAY &amp; SUNDAY NIGHTS &middot; TAWA SCOUT HALL</p>
+        <h1>Line dancing with a proper bit of <span class="accent">spark</span>.</h1>
+        <p class="hero-lead">Friendly classes, great music, and a welcoming floor for beginners, improvers, and confident dancers alike. Come for the steps &mdash; stay for the atmosphere.</p>
+
+        <div class="hero-pills">
+          <span class="pill">6:30 &ndash; 9 PM</span>
+          <span class="pill">Tawa</span>
+          <span class="pill">All levels</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pricing">See Pricing</a>
+          <a class="btn btn-outline" href="#contact">Book a Spot</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <img class="hero-logo" src="logo.png" alt="Scuffing Mad Dancers logo" width="320" height="320">
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>2 Nights</strong>
+            <span>Fri &amp; Sun</span>
           </div>
-        </a>
-        <a class="btn btn-primary partner-map-link" href="https://www.google.com/maps/search/?api=1&query=Tawa%20Scout%20Hall%2C%2021%20Oxford%20Street%2C%20Tawa%2C%20Wellington%205028" target="_blank" rel="noopener noreferrer">Open Tawa Scout Hall in Google Maps</a>
+          <div class="stat">
+            <strong>2.5 hrs</strong>
+            <span>Per session</span>
+          </div>
+          <div class="stat">
+            <strong>All Welcome</strong>
+            <span>First-timers up</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Venue Banner -->
+  <div class="venue-banner">
+    <div class="container venue-banner-inner">
+      <div class="venue-info">
+        <strong>Now at Tawa Scout Hall</strong>
+        <span>21 Oxford Street, Tawa, Wellington 5028</span>
+      </div>
+      <a class="btn btn-sm btn-outline" href="https://www.google.com/maps/search/?api=1&query=Tawa%20Scout%20Hall%2C%2021%20Oxford%20Street%2C%20Tawa%2C%20Wellington%205028" target="_blank" rel="noopener noreferrer">Open in Maps</a>
+    </div>
+  </div>
+
   <main>
+
+    <!-- About -->
     <section class="section" id="about">
-      <div class="container two-col">
-        <div>
-          <p class="eyebrow">ABOUT SCUFFING MAD DANCERS</p>
-          <h2>A lively, local night out with <span>proper heart</span>.</h2>
-          <p class="lead">Scuffing Mad Dancers brings people together for upbeat line dancing in a warm, welcoming space at Tawa Scout Hall. Whether you are stepping onto the floor for the first time or polishing what you already know, there is room for you here.</p>
-          <div class="feature-grid">
-            <article class="feature shell-card"><h3>Beginner Friendly</h3><p>Clear teaching, steady progress, and no pressure.</p></article>
-            <article class="feature shell-card"><h3>Good Music</h3><p>A lively mix that keeps the room moving all night.</p></article>
-            <article class="feature shell-card"><h3>Community Feel</h3><p>Supportive people, easy smiles, and plenty of fun.</p></article>
-            <article class="feature shell-card"><h3>Room To Improve</h3><p>Build confidence and take on more as you go.</p></article>
-          </div>
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <p class="eyebrow">ABOUT US</p>
+          <h2>A lively, local night out with <span class="accent">proper heart</span>.</h2>
+          <p class="section-sub">Scuffing Mad Dancers brings people together for upbeat line dancing in a warm, welcoming space. Whether you are stepping onto the floor for the first time or polishing what you already know, there is room for you.</p>
         </div>
-        <div class="image-panel shell-card">
-          <img src="1000036452.jpg" alt="Scuffing Mad Dancers class on the floor in Tawa">
+        <div class="features" data-reveal>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">&#127926;</div>
+            <h3>Great Music</h3>
+            <p>A lively mix that keeps the room moving all night long.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">&#128075;</div>
+            <h3>Beginner Friendly</h3>
+            <p>Clear teaching, steady progress, and absolutely no pressure.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">&#10084;&#65039;</div>
+            <h3>Community Feel</h3>
+            <p>Supportive people, easy smiles, and plenty of fun.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">&#128200;</div>
+            <h3>Room to Grow</h3>
+            <p>Build confidence and take on more challenging routines as you go.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="pricing">
+    <!-- Gallery -->
+    <section class="section section-alt" id="gallery">
       <div class="container">
-        <div class="section-heading center">
-          <p class="eyebrow">PRICING</p>
-          <h2>Choose the class that suits your <span>stride</span>.</h2>
-          <p class="subtle">Simple pricing, friendly sessions, and easy booking by email, phone, or payment on the night.</p>
+        <div class="section-header center" data-reveal>
+          <p class="eyebrow">ON THE FLOOR</p>
+          <h2>See the <span class="accent">energy</span> for yourself.</h2>
         </div>
-        <div class="pricing-grid">
-          <article class="price-card featured shell-card">
-            <div class="badge">Starter Option</div>
+        <div class="gallery-grid" data-reveal>
+          <figure class="gallery-item">
+            <img src="1000036446.jpg" alt="Dancers moving across the floor at Tawa Scout Hall" loading="lazy" width="600" height="400">
+          </figure>
+          <figure class="gallery-item">
+            <img src="1000036448.jpg" alt="Scuffing Mad Dancers class mid-routine in Tawa" loading="lazy" width="600" height="400">
+          </figure>
+          <figure class="gallery-item">
+            <img src="1000036450.jpg" alt="Line dancers stepping together at Tawa Scout Hall" loading="lazy" width="600" height="400">
+          </figure>
+          <figure class="gallery-item gallery-item--wide">
+            <img src="1000036452.jpg" alt="Scuffing Mad Dancers class on the floor in Tawa" loading="lazy" width="800" height="400">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <p class="eyebrow">PRICING</p>
+          <h2>Simple, friendly <span class="accent">pricing</span>.</h2>
+          <p class="section-sub">Pay by bank transfer or on the night &mdash; whatever suits you.</p>
+        </div>
+
+        <div class="pricing-grid" data-reveal>
+          <article class="price-card price-card--featured">
+            <div class="price-badge">Starter</div>
             <h3>Beginner &amp; Improver</h3>
             <p class="price-desc">New dancers join both classes together</p>
             <div class="price">$8<span>/session</span></div>
-            <ul>
-              <li>Includes both beginner and improver</li>
-              <li>No beginner-only class option</li>
+            <ul class="price-list">
+              <li>Includes both beginner &amp; improver</li>
               <li>Extra patterns and combinations</li>
-              <li>More time on the floor to build confidence</li>
+              <li>More time on the floor</li>
+              <li>Build confidence at your pace</li>
             </ul>
             <button class="btn btn-primary book-btn" data-package="Beginner &amp; Improver" data-price="8.00">Book / Enquire</button>
           </article>
 
-          <article class="price-card shell-card">
+          <article class="price-card">
             <h3>Full Class</h3>
             <p class="price-desc">The complete evening</p>
             <div class="price">$10<span>/session</span></div>
-            <ul>
+            <ul class="price-list">
               <li>Access to the full session</li>
               <li>More routines and floor time</li>
-              <li>Best value for regular dancers</li>
+              <li>Best value for regulars</li>
               <li>Great for a full night out</li>
             </ul>
-            <button class="btn btn-secondary book-btn" data-package="Full Class" data-price="10.00">Book / Enquire</button>
+            <button class="btn btn-outline book-btn" data-package="Full Class" data-price="10.00">Book / Enquire</button>
           </article>
         </div>
-        <p class="pricing-note subtle center">Beginner dancers book the combined <strong>Beginner &amp; Improver</strong> option for $8. There is no beginner-only class price.</p>
 
-        <div class="bank-box shell-card">
-          <p class="bank-kicker">Prefer bank transfer?</p>
+        <p class="pricing-note center" data-reveal>Beginner dancers book the combined <strong>Beginner &amp; Improver</strong> option for $8. There is no beginner-only price.</p>
+
+        <div class="bank-box" data-reveal>
+          <p class="bank-label">Prefer bank transfer?</p>
           <strong>PETER REYNOLDS</strong>
           <code id="bank-number">02-0552-0027244-005</code>
-          <button class="btn btn-secondary small" id="copy-bank">Copy bank details</button>
+          <button class="btn btn-sm btn-outline" id="copy-bank">Copy Details</button>
         </div>
       </div>
     </section>
 
-    <section class="section" id="schedule">
+    <!-- Schedule -->
+    <section class="section section-alt" id="schedule">
       <div class="container">
-        <div class="panel center shell-card">
+        <div class="section-header center" data-reveal>
           <p class="eyebrow">WHEN &amp; WHERE</p>
-          <h2>Every <span>Friday &amp; Sunday</span></h2>
-          <div class="schedule-grid">
-            <div><h3>Days</h3><p>Friday &amp; Sunday</p></div>
-            <div><h3>Time</h3><p>6:30 PM – 9 PM</p></div>
-            <div><h3>Location</h3><p>Tawa Scout Hall · 21 Oxford Street</p></div>
-            <div><h3>Style</h3><p>Line Dancing · All levels welcome</p></div>
+          <h2>Every <span class="accent">Friday &amp; Sunday</span>.</h2>
+        </div>
+        <div class="schedule-cards" data-reveal>
+          <div class="schedule-card">
+            <div class="schedule-icon" aria-hidden="true">&#128197;</div>
+            <h3>Days</h3>
+            <p>Friday &amp; Sunday</p>
+          </div>
+          <div class="schedule-card">
+            <div class="schedule-icon" aria-hidden="true">&#128358;</div>
+            <h3>Time</h3>
+            <p>6:30 PM &ndash; 9:00 PM</p>
+          </div>
+          <div class="schedule-card">
+            <div class="schedule-icon" aria-hidden="true">&#128205;</div>
+            <h3>Location</h3>
+            <p>Tawa Scout Hall<br>21 Oxford Street</p>
+          </div>
+          <div class="schedule-card">
+            <div class="schedule-icon" aria-hidden="true">&#128131;</div>
+            <h3>Style</h3>
+            <p>Line Dancing<br>All levels welcome</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="contact">
-      <div class="container">
-        <div class="section-heading center">
-          <p class="eyebrow">GET IN TOUCH</p>
-          <h2>Ready to <span>join in</span>?</h2>
-          <p class="subtle">Pick whichever suits you best and we’ll get you sorted.</p>
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container container-narrow">
+        <div class="section-header center" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2>Got <span class="accent">questions</span>?</h2>
         </div>
-        <div class="contact-grid">
-          <a class="contact-card shell-card" href="mailto:Anthonytau4@gmail.com">
-            <h3>Email</h3>
-            <p>Anthonytau4@gmail.com</p>
-            <span>Best for general enquiries and bookings</span>
+        <div class="faq-list" data-reveal>
+          <details class="faq-item">
+            <summary>Do I need any experience?</summary>
+            <p>Not at all! Our beginner class starts from scratch. You will be guided through every step &mdash; no dance background needed.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What should I wear?</summary>
+            <p>Comfortable clothes and shoes you can move in. Smooth-soled shoes work best on the floor &mdash; avoid sticky rubber soles if you can.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need a partner?</summary>
+            <p>No! Line dancing is danced solo in rows, so there is no partner required. Come on your own or bring friends &mdash; either way you will have a great time.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I just turn up on the night?</summary>
+            <p>Absolutely. No booking is required &mdash; just show up at Tawa Scout Hall before 6:30 PM and pay on the door.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I pay?</summary>
+            <p>You can pay cash on the night or by bank transfer beforehand. See the pricing section for bank details.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner -->
+    <section class="section section-alt" id="partner">
+      <div class="container">
+        <div class="partner-card" data-reveal>
+          <a class="partner-link-block" href="https://barkingmadbarbers.com" target="_blank" rel="noopener noreferrer">
+            <img src="barber-logo.png" alt="Barking Mad Barbers logo" width="120" height="120" loading="lazy">
+            <div class="partner-copy">
+              <p class="eyebrow">OUR FRIENDS</p>
+              <h3>Barking Mad Barbers</h3>
+              <p>Tap to visit their website &rarr;</p>
+            </div>
           </a>
-          <a class="contact-card shell-card" href="tel:021404537">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <p class="eyebrow">GET IN TOUCH</p>
+          <h2>Ready to <span class="accent">join in</span>?</h2>
+          <p class="section-sub">Pick whichever suits you best and we will get you sorted.</p>
+        </div>
+        <div class="contact-grid" data-reveal>
+          <a class="contact-card" href="mailto:Anthonytau4@gmail.com">
+            <div class="contact-icon" aria-hidden="true">&#9993;&#65039;</div>
+            <h3>Email</h3>
+            <p class="contact-value">Anthonytau4@gmail.com</p>
+            <span>Best for enquiries &amp; bookings</span>
+          </a>
+          <a class="contact-card" href="tel:021404537">
+            <div class="contact-icon" aria-hidden="true">&#128222;</div>
             <h3>Call</h3>
-            <p>021 404 537</p>
+            <p class="contact-value">021 404 537</p>
             <span>Handy for a quick answer</span>
           </a>
         </div>
@@ -236,44 +337,55 @@
 
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-wrap">
+    <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="logo.png" alt="Scuffing Mad Dancers logo">
+        <img src="logo.png" alt="Scuffing Mad Dancers logo" width="48" height="48">
         <div>
           <strong>Scuffing Mad Dancers</strong>
-          <p>Friday &amp; Sunday · Tawa Scout Hall · 6:30 PM – 9 PM</p>
+          <p>Fri &amp; Sun &middot; Tawa Scout Hall &middot; 6:30 &ndash; 9 PM</p>
         </div>
       </div>
-      <small>© <span id="year"></span> Scuffing Mad Dancers. All rights reserved.</small>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <small>&copy; <span id="year"></span> Scuffing Mad Dancers. All rights reserved.</small>
     </div>
   </footer>
 
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" hidden>&uarr;</button>
+
+  <!-- Booking Modal -->
   <dialog id="booking-modal" class="modal">
-    <form method="dialog" class="modal-card shell-card">
-      <button class="modal-close" id="close-modal" aria-label="Close">×</button>
+    <form method="dialog" class="modal-body">
+      <button class="modal-close" id="close-modal" type="button" aria-label="Close">&times;</button>
       <p class="eyebrow">BOOKING</p>
       <h3 id="modal-title">Book your class</h3>
-      <p class="subtle" id="modal-price"></p>
+      <p class="modal-price" id="modal-price"></p>
 
-      <label>
+      <label for="customer-name">
         Name (optional)
-        <input type="text" id="customer-name" placeholder="Your name">
+        <input type="text" id="customer-name" placeholder="Your name" autocomplete="name">
       </label>
-      <label>
+      <label for="customer-email">
         Email (optional)
-        <input type="email" id="customer-email" placeholder="your@email.com">
+        <input type="email" id="customer-email" placeholder="your@email.com" autocomplete="email">
       </label>
 
-      <div class="bank-panel shell-card">
-        <p>Use the buttons below to enquire or book your place. Payment can be made by bank transfer or on the night.</p>
+      <div class="modal-bank">
+        <p>Payment can be made by bank transfer or on the night.</p>
         <strong>PETER REYNOLDS</strong>
         <code>02-0552-0027244-005</code>
       </div>
 
       <div class="modal-actions">
         <a href="mailto:Anthonytau4@gmail.com" id="email-booking" class="btn btn-primary">Email Booking</a>
-        <a href="tel:021404537" class="btn btn-secondary">Call Now</a>
+        <a href="tel:021404537" class="btn btn-outline">Call Now</a>
       </div>
     </form>
   </dialog>
