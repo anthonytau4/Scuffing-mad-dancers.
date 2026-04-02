@@ -36,6 +36,19 @@ img { max-width: 100%; display: block; }
 button { font: inherit; }
 ul { list-style: none; }
 
+/* ── Squircle icon ── */
+.icon-squircle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.4rem;
+  border-radius: 22%;
+  background: rgba(232,177,74,.12);
+  border: 1px solid var(--border-glow);
+}
+
 /* ── Layout ── */
 .container       { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
 .container-narrow{ width: min(720px, calc(100% - 2rem)); margin: 0 auto; }
@@ -370,7 +383,7 @@ h1 .accent, h2 .accent, h3 .accent { color: var(--gold); }
   border-color: var(--border-glow);
   box-shadow: 0 12px 32px rgba(232,177,74,.08);
 }
-.feature-icon { font-size: 1.6rem; margin-bottom: .75rem; }
+.feature-icon { margin-bottom: .75rem; }
 .feature-card p { color: var(--text-muted); font-size: .9rem; margin: 0; }
 
 /* ── Gallery ── */
@@ -481,7 +494,7 @@ code {
   transform: translateY(-4px);
   border-color: var(--border-glow);
 }
-.schedule-icon { font-size: 1.5rem; margin-bottom: .75rem; }
+.schedule-icon { margin-bottom: .75rem; }
 .schedule-card p { color: var(--text-muted); margin: 0; font-size: .9rem; }
 
 /* ── FAQ ── */
@@ -572,7 +585,7 @@ code {
   border-color: var(--border-glow);
   box-shadow: 0 8px 24px rgba(232,177,74,.08);
 }
-.contact-icon { font-size: 1.5rem; margin-bottom: .75rem; }
+.contact-icon { margin-bottom: .75rem; }
 .contact-value { color: var(--gold-soft); font-weight: 800; font-size: 1.05rem; margin-bottom: .5rem; }
 .contact-card span { color: var(--text-muted); font-size: .85rem; }
 
