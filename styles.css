@@ -54,7 +54,7 @@ h1, h2, h3 { line-height: 1.1; }
 h1 { font-size: clamp(2.8rem, 6vw, 5rem); letter-spacing: -.035em; margin-bottom: 1rem; }
 h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.025em; margin-bottom: 1rem; }
 h3 { font-size: 1.15rem; margin-bottom: .5rem; }
-h1 em, h2 em, h3 em { font-style: normal; color: var(--gold); }
+h1 .accent, h2 .accent, h3 .accent { color: var(--gold); }
 .section-sub {
   color: var(--text-muted);
   font-size: 1.05rem;
@@ -147,6 +147,11 @@ h1 em, h2 em, h3 em { font-style: normal; color: var(--gold); }
   font-size: .9rem;
 }
 .nav-menu > a:hover { color: var(--gold-soft); }
+
+/* Nav overlay (hidden by default, activated on mobile) */
+.nav-overlay {
+  display: none;
+}
 
 /* Hamburger */
 .menu-toggle {
@@ -761,6 +766,7 @@ input:focus {
 
   /* Overlay for mobile menu */
   .nav-overlay {
+    display: block;
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,.6);

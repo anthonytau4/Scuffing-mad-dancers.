@@ -15,10 +15,8 @@
   var menuToggle = document.getElementById('menu-toggle');
   var navMenu = document.getElementById('nav-menu');
 
-  /* Create overlay element for mobile menu */
-  var overlay = document.createElement('div');
-  overlay.className = 'nav-overlay';
-  document.body.appendChild(overlay);
+  /* Use overlay element from HTML for mobile menu */
+  var overlay = document.getElementById('nav-overlay');
 
   function openMenu() {
     navMenu.classList.add('open');
@@ -80,6 +78,7 @@
      ══════════════════════════════════════════════ */
   var revealElements = document.querySelectorAll('[data-reveal]');
   if (revealElements.length && 'IntersectionObserver' in window) {
+    /* 12% visibility triggers reveal; 40px bottom margin triggers slightly before element enters viewport */
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
