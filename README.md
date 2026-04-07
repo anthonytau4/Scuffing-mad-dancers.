@@ -24,3 +24,7 @@ A static website for Scuffing Mad Dancers that works nicely on GitHub Pages.
 6. Save.
 
 Your site will work without any build step.
+
+## Contributors
+- Scuffing Mad Dancers team
+- GPT-5.3-Codex (OpenAI assistant support)
