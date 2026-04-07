@@ -249,6 +249,11 @@ h1 .accent, h2 .accent, h3 .accent { color: var(--gold); }
   background: #fff;
   padding: 6px;
 }
+.partner-link img.stepper-logo {
+  background: transparent;
+  padding: 0;
+  border-radius: 14px;
+}
 .partner-link strong { display: block; font-size: .9rem; }
 .partner-link span { color: var(--text-muted); font-size: .8rem; }
 
@@ -581,6 +586,10 @@ code {
 }
 
 /* ── Partner ── */
+.partner-stack {
+  display: grid;
+  gap: 1rem;
+}
 .partner-card {
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
@@ -605,6 +614,11 @@ code {
   background: #fff;
   padding: 10px;
   flex-shrink: 0;
+}
+.partner-link-block img.stepper-logo {
+  background: transparent;
+  padding: 0;
+  border-radius: 24px;
 }
 .partner-copy p { color: var(--text-muted); margin: 0; font-size: .9rem; }
 
