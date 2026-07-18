@@ -1,6 +1,10 @@
 # Scuffing Mad Dancers Website
 
-A static website for Scuffing Mad Dancers that works nicely on GitHub Pages.
+The website for Scuffing Mad Dancers — friendly line dancing classes every
+Friday and Sunday at Tawa Scout Hall, Wellington. A fully static site that
+works nicely on GitHub Pages: no build step, no dependencies.
+
+Live at [scuffingmaddancers.nz](https://scuffingmaddancers.nz/).
 
 ## What it uses
 - HTML
@@ -8,11 +12,16 @@ A static website for Scuffing Mad Dancers that works nicely on GitHub Pages.
 - JavaScript
 
 ## Features
-- Pricing cards
-- Booking modal
-- Email booking link
-- Phone link
+- Brand-matched dark theme with the SMD orange, display typography, and subtle grain
+- Scrolling ticker with class times and a "your first night" walkthrough
+- Class cards for the Friday and Sunday sessions with a map link to the hall
+- Photo gallery with a keyboard-friendly lightbox
+- Pricing cards with a booking modal (email booking link and phone link)
 - Copyable bank details
+- Sticky nav with active-section highlighting and a scroll progress bar
+- Scroll-reveal animations that respect `prefers-reduced-motion`
+- SEO: Open Graph/Twitter tags plus LocalBusiness and DanceEvent structured data
+- Custom 404 page
 - Simple GitHub Pages hosting
 
 ## Publish to GitHub Pages
@@ -28,3 +37,4 @@ Your site will work without any build step.
 ## Contributors
 - Scuffing Mad Dancers team
 - GPT-5.3-Codex (OpenAI assistant support)
+- Claude (Anthropic assistant support)
