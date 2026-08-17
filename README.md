@@ -1,8 +1,10 @@
 # Scuffing Mad Dancers Website
 
-The website for Scuffing Mad Dancers — friendly line dancing classes every
-Friday and Sunday at Tawa Scout Hall, Wellington. A fully static site that
-works nicely on GitHub Pages: no build step, no dependencies.
+The website for Scuffing Mad Dancers — friendly line dancing every Friday at
+Tawa School Hall, 6A Oxford Street, Tawa, Wellington. Beginners run from
+6:30–7:30 PM, followed by a stay-on improver class from 7:30–8:00 PM. The
+session is $8. A fully static site that works nicely on GitHub Pages: no build
+step, no dependencies.
 
 Live at [scuffingmaddancers.nz](https://scuffingmaddancers.nz/).
 
@@ -14,7 +16,7 @@ Live at [scuffingmaddancers.nz](https://scuffingmaddancers.nz/).
 ## Features
 - Brand-matched dark theme with the SMD orange, display typography, and subtle grain
 - Scrolling ticker with class times and a "your first night" walkthrough
-- Class cards for the Friday and Sunday sessions with a map link to the hall
+- Class cards for the Friday beginner and stay-on improver times with a map link to the hall
 - Photo gallery with a keyboard-friendly lightbox
 - Pricing cards with a booking modal (email booking link and phone link)
 - Copyable bank details
