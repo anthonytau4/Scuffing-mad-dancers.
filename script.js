@@ -307,4 +307,274 @@
     });
   }
 
+
+  /* ══════════════════════════════════════════════
+     PARTY MODE + TOUCH SPARKS
+     ══════════════════════════════════════════════ */
+  document.documentElement.classList.add('js');
+
+  var glow = document.createElement('div');
+  glow.className = 'interaction-glow';
+  glow.setAttribute('aria-hidden', 'true');
+  document.body.insertBefore(glow, document.body.firstChild);
+
+  function gentlePulse(duration) {
+    if (navigator.vibrate) navigator.vibrate(duration || 10);
+  }
+
+  function makeSpark(x, y, dx, dy) {
+    if (reducedMotion) return;
+    var spark = document.createElement('span');
+    spark.className = 'party-spark';
+    spark.textContent = Math.random() > .45 ? '✦' : '·';
+    spark.style.setProperty('--spark-x', x + 'px');
+    spark.style.setProperty('--spark-y', y + 'px');
+    spark.style.setProperty('--spark-dx', dx + 'px');
+    spark.style.setProperty('--spark-dy', dy + 'px');
+    document.body.appendChild(spark);
+    window.setTimeout(function () { spark.remove(); }, 760);
+  }
+
+  function sparkBurst(x, y, amount) {
+    for (var i = 0; i < amount; i += 1) {
+      var angle = (Math.PI * 2 * i / amount) + Math.random() * .3;
+      var distance = 28 + Math.random() * 54;
+      makeSpark(x, y, Math.cos(angle) * distance, Math.sin(angle) * distance);
+    }
+  }
+
+  window.addEventListener('pointermove', function (event) {
+    document.body.style.setProperty('--pointer-x', event.clientX + 'px');
+    document.body.style.setProperty('--pointer-y', event.clientY + 'px');
+  }, { passive: true });
+
+  document.addEventListener('pointerdown', function (event) {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+    if (event.target.closest('input, textarea, dialog')) return;
+    makeSpark(event.clientX, event.clientY, (Math.random() - .5) * 36, -28 - Math.random() * 22);
+  }, { passive: true });
+
+  var partyToggle = document.getElementById('party-toggle');
+  var partyLabel = document.getElementById('party-toggle-label');
+  var partyOn = false;
+
+  function applyPartyMode(on, celebrate) {
+    partyOn = on;
+    document.body.classList.toggle('party-mode', partyOn);
+    if (partyToggle) partyToggle.setAttribute('aria-pressed', String(partyOn));
+    if (partyLabel) partyLabel.textContent = partyOn ? 'Party mode on' : 'Party mode';
+    try { localStorage.setItem('smd-party-mode', partyOn ? 'on' : 'off'); } catch (_) {}
+    if (partyOn && celebrate && partyToggle) {
+      var rect = partyToggle.getBoundingClientRect();
+      sparkBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 16);
+      gentlePulse([12, 35, 12]);
+    }
+  }
+
+  try {
+    applyPartyMode(localStorage.getItem('smd-party-mode') === 'on', false);
+  } catch (_) {
+    applyPartyMode(false, false);
+  }
+
+  if (partyToggle) {
+    partyToggle.addEventListener('click', function () {
+      applyPartyMode(!partyOn, true);
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     LOGO DANCE
+     ══════════════════════════════════════════════ */
+  var logoDanceTrigger = document.getElementById('logo-dance-trigger');
+  var heroLogo = document.querySelector('.hero-logo');
+  var logoDanceTimer;
+
+  if (logoDanceTrigger && heroLogo) {
+    logoDanceTrigger.addEventListener('click', function () {
+      window.clearTimeout(logoDanceTimer);
+      heroLogo.classList.remove('is-dancing');
+      void heroLogo.offsetWidth;
+      heroLogo.classList.add('is-dancing');
+      var rect = heroLogo.getBoundingClientRect();
+      sparkBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 14);
+      gentlePulse(16);
+      logoDanceTimer = window.setTimeout(function () {
+        heroLogo.classList.remove('is-dancing');
+      }, 1100);
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     CLASS MATCHER — PUBLISHED INFORMATION ONLY
+     ══════════════════════════════════════════════ */
+  var finderOptions = Array.prototype.slice.call(document.querySelectorAll('.finder-option'));
+  var finderResult = document.getElementById('finder-result');
+  var finderKicker = document.getElementById('finder-kicker');
+  var finderTitle = document.getElementById('finder-title');
+  var finderCopy = document.getElementById('finder-copy');
+  var finderFacts = document.getElementById('finder-facts');
+  var finderData = {
+    new: {
+      kicker: 'Published beginner session',
+      title: 'Sunday Beginners',
+      copy: 'Sunday is the published beginners session: 1:00 PM–3:00 PM at Tawa Scout Hall.',
+      facts: ['Sunday', '1:00 PM–3:00 PM', 'Beginners']
+    },
+    all: {
+      kicker: 'Published all-levels session',
+      title: 'Friday Night Session',
+      copy: 'Friday is the published all-levels session: 6:30 PM–9:00 PM at Tawa Scout Hall.',
+      facts: ['Friday', '6:30 PM–9:00 PM', 'All levels']
+    },
+    both: {
+      kicker: 'Both published weekly sessions',
+      title: 'Friday + Sunday',
+      copy: 'Friday runs 6:30 PM–9:00 PM for all levels. Sunday runs 1:00 PM–3:00 PM for beginners. Pick the time and level that fit you.',
+      facts: ['Friday + Sunday', 'Two published sessions', 'Tawa Scout Hall']
+    }
+  };
+
+  finderOptions.forEach(function (option) {
+    option.addEventListener('click', function () {
+      var data = finderData[option.dataset.match];
+      if (!data || !finderResult) return;
+
+      finderOptions.forEach(function (button) {
+        var selected = button === option;
+        button.classList.toggle('active', selected);
+        button.setAttribute('aria-pressed', String(selected));
+      });
+
+      finderResult.classList.remove('is-changing');
+      void finderResult.offsetWidth;
+      finderResult.classList.add('is-changing');
+      finderKicker.textContent = data.kicker;
+      finderTitle.textContent = data.title;
+      finderCopy.textContent = data.copy;
+      finderFacts.textContent = '';
+      data.facts.forEach(function (fact) {
+        var chip = document.createElement('span');
+        chip.textContent = fact;
+        finderFacts.appendChild(chip);
+      });
+      gentlePulse(8);
+      window.setTimeout(function () { finderResult.classList.remove('is-changing'); }, 720);
+    });
+  });
+
+  /* ══════════════════════════════════════════════
+     TAP-THE-BEAT EIGHT COUNT
+     ══════════════════════════════════════════════ */
+  var beatPad = document.getElementById('beat-pad');
+  var beatReset = document.getElementById('beat-reset');
+  var beatStatus = document.getElementById('beat-status');
+  var beatDots = Array.prototype.slice.call(document.querySelectorAll('#beat-dots span'));
+  var beatCount = 0;
+  var beatResetTimer;
+  var audioContext;
+
+  function playTinyBeat(isDownbeat) {
+    var AudioContextCtor = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextCtor) return;
+    if (!audioContext) audioContext = new AudioContextCtor();
+    if (audioContext.state === 'suspended') audioContext.resume();
+
+    var now = audioContext.currentTime;
+    var oscillator = audioContext.createOscillator();
+    var gain = audioContext.createGain();
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(isDownbeat ? 125 : 180, now);
+    oscillator.frequency.exponentialRampToValueAtTime(isDownbeat ? 58 : 92, now + .085);
+    gain.gain.setValueAtTime(.0001, now);
+    gain.gain.exponentialRampToValueAtTime(isDownbeat ? .16 : .09, now + .008);
+    gain.gain.exponentialRampToValueAtTime(.0001, now + .11);
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+    oscillator.start(now);
+    oscillator.stop(now + .12);
+  }
+
+  function resetBeatCount() {
+    window.clearTimeout(beatResetTimer);
+    beatCount = 0;
+    beatDots.forEach(function (dot) {
+      dot.classList.remove('active', 'downbeat');
+    });
+    if (beatStatus) beatStatus.textContent = '0 of 8 beats';
+  }
+
+  function hitBeat() {
+    if (!beatPad || !beatStatus) return;
+    window.clearTimeout(beatResetTimer);
+    if (beatCount >= 8) resetBeatCount();
+
+    beatCount += 1;
+    var dot = beatDots[beatCount - 1];
+    var downbeat = beatCount === 1 || beatCount === 5;
+    if (dot) dot.classList.add('active');
+    if (dot && downbeat) dot.classList.add('downbeat');
+
+    beatPad.classList.remove('hit');
+    void beatPad.offsetWidth;
+    beatPad.classList.add('hit');
+    window.setTimeout(function () { beatPad.classList.remove('hit'); }, 150);
+
+    playTinyBeat(downbeat);
+    gentlePulse(downbeat ? 18 : 9);
+
+    if (beatCount === 8) {
+      beatStatus.textContent = 'Full 8-count! Tap again to restart.';
+      var rect = beatPad.getBoundingClientRect();
+      sparkBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 18);
+      beatResetTimer = window.setTimeout(resetBeatCount, 2600);
+    } else {
+      beatStatus.textContent = beatCount + ' of 8 beats';
+    }
+  }
+
+  if (beatPad) beatPad.addEventListener('click', hitBeat);
+  if (beatReset) beatReset.addEventListener('click', resetBeatCount);
+
+  /* ══════════════════════════════════════════════
+     DESKTOP TILT + UNIVERSAL BUTTON RIPPLES
+     ══════════════════════════════════════════════ */
+  var tiltCards = Array.prototype.slice.call(document.querySelectorAll(
+    '.hero-visual, .feature-card, .class-card, .venue-card, .step-card, .price-card, .partner-card, .contact-card'
+  ));
+
+  tiltCards.forEach(function (card) { card.classList.add('interactive-card'); });
+
+  if (!reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    tiltCards.forEach(function (card) {
+      card.addEventListener('pointermove', function (event) {
+        var rect = card.getBoundingClientRect();
+        var x = (event.clientX - rect.left) / rect.width;
+        var y = (event.clientY - rect.top) / rect.height;
+        var rotateY = (x - .5) * 4.5;
+        var rotateX = (.5 - y) * 4.5;
+        card.style.setProperty('--card-x', (x * 100) + '%');
+        card.style.setProperty('--card-y', (y * 100) + '%');
+        card.style.transform = 'perspective(900px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-3px)';
+      });
+
+      card.addEventListener('pointerleave', function () {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  document.querySelectorAll('.btn, .party-toggle, .logo-dance-trigger, .finder-option, .beat-reset').forEach(function (button) {
+    button.addEventListener('pointerdown', function (event) {
+      var rect = button.getBoundingClientRect();
+      var ripple = document.createElement('span');
+      ripple.className = 'tap-ripple';
+      ripple.style.left = (event.clientX - rect.left) + 'px';
+      ripple.style.top = (event.clientY - rect.top) + 'px';
+      button.appendChild(ripple);
+      window.setTimeout(function () { ripple.remove(); }, 660);
+    });
+  });
+
+
 })();

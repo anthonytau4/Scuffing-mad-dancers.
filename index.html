@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=straight-corners-1">
+  <link rel="stylesheet" href="styles.css?v=interactive-perfect-1">
 
   <script type="application/ld+json">
   {
@@ -166,6 +166,10 @@
             </a>
           </div>
         </div>
+        <button class="party-toggle" id="party-toggle" type="button" aria-pressed="false">
+          <span class="party-toggle-icon" aria-hidden="true">✦</span>
+          <span id="party-toggle-label">Party mode</span>
+        </button>
         <a class="btn btn-primary btn-sm nav-cta" href="#pricing">Book a Spot</a>
       </div>
     </nav>
@@ -213,6 +217,10 @@
             <span>no partner needed</span>
           </div>
         </div>
+        <button class="logo-dance-trigger" id="logo-dance-trigger" type="button">
+          <span aria-hidden="true">♫</span>
+          Make the logo dance
+        </button>
       </div>
     </div>
 
@@ -339,6 +347,48 @@
       </div>
     </section>
 
+    <!-- Interactive class finder -->
+    <section class="section finder-section" id="class-finder">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <p class="eyebrow">Find your floor</p>
+          <h2>Which session sounds <span class="accent">most like you?</span></h2>
+          <p class="section-sub">Tap an option for a quick suggestion based only on the class levels and times published on this page.</p>
+        </div>
+
+        <div class="finder-shell" data-reveal>
+          <div class="finder-controls" role="group" aria-label="Choose what sounds like you">
+            <button class="finder-option active" type="button" data-match="new" aria-pressed="true">
+              <span aria-hidden="true">01</span>
+              I am brand new
+            </button>
+            <button class="finder-option" type="button" data-match="all" aria-pressed="false">
+              <span aria-hidden="true">02</span>
+              I want all levels
+            </button>
+            <button class="finder-option" type="button" data-match="both" aria-pressed="false">
+              <span aria-hidden="true">03</span>
+              Show me both
+            </button>
+          </div>
+
+          <article class="finder-result" id="finder-result" aria-live="polite">
+            <p class="finder-kicker" id="finder-kicker">Published beginner session</p>
+            <h3 id="finder-title">Sunday Beginners</h3>
+            <p id="finder-copy">Sunday is the published beginners session: 1:00 PM–3:00 PM at Tawa Scout Hall.</p>
+            <div class="finder-facts" id="finder-facts">
+              <span>Sunday</span>
+              <span>1:00 PM–3:00 PM</span>
+              <span>Beginners</span>
+            </div>
+            <a class="btn btn-primary" href="#schedule">See the timetable</a>
+          </article>
+        </div>
+
+        <p class="finder-note center">This helper does not guess availability or make promises—it only uses the timetable above.</p>
+      </div>
+    </section>
+
     <!-- First night -->
     <section class="section" id="first-night">
       <div class="container">
@@ -362,6 +412,32 @@
             <h3>Follow the steps</h3>
             <p>Line dancing is danced solo in rows, so there is no partner needed. We teach every step from scratch &mdash; you will be dancing by the end of the night.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tap the beat -->
+    <section class="section beat-section" id="tap-the-beat">
+      <div class="container">
+        <div class="beat-console" data-reveal>
+          <div class="beat-copy">
+            <p class="eyebrow">Just for fun</p>
+            <h2>Wake up the <span class="accent">dance floor.</span></h2>
+            <p>Tap the pad through one full eight-count. It makes a tiny beat, lights the count, and gives your phone a gentle pulse when supported.</p>
+            <p class="beat-status" id="beat-status" aria-live="polite">0 of 8 beats</p>
+            <button class="beat-reset" id="beat-reset" type="button">Reset the count</button>
+          </div>
+
+          <div class="beat-stage">
+            <button class="beat-pad" id="beat-pad" type="button" aria-label="Tap the beat">
+              <span>Tap</span>
+              <small>the beat</small>
+            </button>
+            <div class="beat-dots" id="beat-dots" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -606,6 +682,6 @@
     </div>
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=interactive-perfect-1"></script>
 </body>
 </html>
