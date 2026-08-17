@@ -416,22 +416,22 @@
   var finderFacts = document.getElementById('finder-facts');
   var finderData = {
     new: {
-      kicker: 'Published beginner session',
-      title: 'Sunday Beginners',
-      copy: 'Sunday is the published beginners session: 1:00 PM–3:00 PM at Tawa Scout Hall.',
-      facts: ['Sunday', '1:00 PM–3:00 PM', 'Beginners']
+      kicker: 'Published beginner class',
+      title: 'Friday Beginners',
+      copy: 'The beginner class runs every Friday from 6:30 PM–7:30 PM at Tawa School Hall.',
+      facts: ['Friday', '6:30 PM–7:30 PM', 'Beginners']
     },
     all: {
-      kicker: 'Published all-levels session',
-      title: 'Friday Night Session',
-      copy: 'Friday is the published all-levels session: 6:30 PM–9:00 PM at Tawa Scout Hall.',
-      facts: ['Friday', '6:30 PM–9:00 PM', 'All levels']
+      kicker: 'Published improver class',
+      title: 'Stay on for Improvers',
+      copy: 'Stay on after beginners every Friday from 7:30 PM–8:00 PM at Tawa School Hall.',
+      facts: ['Friday', '7:30 PM–8:00 PM', 'Improvers']
     },
     both: {
-      kicker: 'Both published weekly sessions',
-      title: 'Friday + Sunday',
-      copy: 'Friday runs 6:30 PM–9:00 PM for all levels. Sunday runs 1:00 PM–3:00 PM for beginners. Pick the time and level that fit you.',
-      facts: ['Friday + Sunday', 'Two published sessions', 'Tawa Scout Hall']
+      kicker: 'The full published Friday session',
+      title: 'Beginners + Improvers',
+      copy: 'Beginners run 6:30 PM–7:30 PM, then stay on for improvers from 7:30 PM–8:00 PM. The Friday session is $8.',
+      facts: ['Every Friday', '6:30 PM–8:00 PM', '$8']
     }
   };
 
