@@ -190,7 +190,7 @@
       'Thank you.'
     ].filter(Boolean).join('\n');
 
-    emailBooking.href = 'mailto:Anthonytau4@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines);
+    emailBooking.href = 'mailto:scuffingmaddance@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines);
   }
 
   document.querySelectorAll('.book-btn').forEach(function (btn) {
